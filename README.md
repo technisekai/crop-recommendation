@@ -2,27 +2,27 @@
 
 ## Domain Proyek
 
-Indonesia merupakan negara agraris yang sebagian besar penduduknya bekerja di sektor pertanian. Dilansir dari [Kementriab Pertanian](https://z-p42.www.instagram.com/p/CooZNrgpjE_/) sektor pertanian menjadi kontributor sebesar **13%** bagi PDB Nasional dan menjadi penghasil devisa bagi negara yang terus meningkat jumlahnya dari tahun 2020 dan 2021.
+Indonesia merupakan negara agraris yang sebagian besar penduduknya bekerja di sektor pertanian. Dilansir dari [Kementrian Pertanian](https://z-p42.www.instagram.com/p/CooZNrgpjE_/) sektor pertanian menjadi kontributor sebesar **13%** bagi PDB Nasional dan menjadi penghasil devisa bagi negara yang terus meningkat jumlahnya dari tahun 2020 dan 2021. Kementrian Pertanian juga menyebutkan bahwa mayoritas masyarakat Indonesia bekerja sebagai petani dan menggantungkan ekonominya di sektor tersebut.
 
-Kesuksesan sektor pertanian ini tentunya tidak lepas dari hasil panen yang terus meningkat yang mana hasil panen ini dipengaruhi dari beberapa faktor dari mulai musim, serangan hama, dan kesesuaian antara jenis tanaman yang ditanam dengan jenis tanahnya. Jenis tanah yang tidak sesuai akan menyebabkan hasil panen tidak optimal dan bahkan mengalami gagal panen. Dikutip dari penelitian [Alfian Nur Budiarto](http://repository.uin-suska.ac.id/27846/) yang melakukan penelitian tentang kesesuaian tanaman orka pada jenis tanah menyimpulkan bahwa tanaman orka pada tanah PMK mengalami peningkatan produksi jumlah buah, bobot basah buah, dan panjang buah dibadingkan jenis tanah yang lain.
+Kesuksesan sektor pertanian dalam menyumbang pendapatan masyarakat ataupun negara tentunya tidak lepas dari produksi panen yang dihasilkan. Hasil panen ini dipengaruhi dari beberapa faktor salah satunya adalah kesesuaian antara jenis tanaman yang ditanam dengan tanahnya. Tanah yang tidak sesuai dengan tanaman yang ditanam akan menyebabkan hasil panen tidak optimal dan bahkan dapat mengalami gagal panen. Dikutip dari penelitian yang dilakukan oleh [Alfian Nur Budiarto](http://repository.uin-suska.ac.id/27846/), dengan penelitian membahas kesesuaian antara tanaman orka dengan jenis tanah dengan indikator tertentu menyimpulkan bahwa tanaman orka mengalami peningkatan produksi jumlah buah, bobot basah buah, dan panjang buah pada tanah dengan indikator tertentu.
 
-Dengan demikian, untuk mendapatkan hasil yang lebih optimal dan sebagai salah satu usaha untuk meningkatkan kualitas dari hasil panen maka pemilihan jenis tanah yang tepat untuk tanaman menjadi penting. Dengan jenis tanah yang tepat produksi panen berpotensi lebih maksimal dan dapat meningkatkan ekonomi masyarakat ataupun negara dan kualitas panen yang dihasilkan pun lebih baik.
+Dengan demikian, untuk mendapatkan hasil panen yang lebih optimal dan sebagai salah satu usaha untuk meningkatkan kualitas dari hasil panen maka pemilihan jenis tanaman untuk indikator tanah tertentu menjadi penting untuk dilakukan. Dengan jenis tanah yang tepat produksi panen berpotensi lebih maksimal dan dapat meningkatkan ekonomi masyarakat ataupun negara dan kualitas panen yang dihasilkan pun lebih baik.
 
 ## Business Understanding
 
 ### Problem Statements
 
-- Indikator apa saja pada tanah yang dapat dijadikan sebagai penentu kesesuaian antara tanah dan jenis tanaman yang akan ditanam?
-- Bagaimana menerapkan algoritma Machine Learning untuk memprediksi jenis tanaman yang sesuai untuk ditanam pada jenis tanah?
+- Indikator apa saja pada tanah yang dapat dijadikan sebagai acuan untuk menentukan jenis tanaman yang sesuai?
+- Bagaimana menerapkan algoritma Machine Learning untuk memprediksi jenis tanaman yang sesuai untuk ditanam pada tanah dengan indikator tertentu?
 
 ### Goals
 
-- Memahami indikator pada tanah yang dapat dijadikan sebagai acuan untuk menanam jenis tanaman yang sesuai
-- Menerapkan algortima machine learning untuk memprediksi jenis tanaman yang sesuai pada indikator tanah
+- Memahami indikator pada tanah yang dapat dijadikan sebagai acuan untuk menanam jenis tanaman yang sesuai.
+- Menerapkan algortima machine learning untuk memprediksi jenis tanaman yang sesuai dengan tanah.
 
 ### Solution statements
-- Melakukan Exploratory Data Analysis untuk memahami indikator yang ada pada tanah dengan melakukan visualisasi pada data.
-- Menerapkan algoritma yang sesuai dengan jenis data yang digunakan dan melakukan hyperparameter tuning untuk mendapatkan hasil yang lebih optimal.
+- Melakukan analsis data pada indikator data dengan melakukan visualisasi pada indikator tanah untuk menemukan korelasi antar variable.
+- Menerapkan algoritma Machine Learning yang sesuai dengan jenis data yang digunakan dan melakukan hyperparameter tuning untuk mendapatkan hasil yang lebih optimal.
 
 ## Data Understanding
 Dataset yang digunakan didapatkan dari sumber terbuka [kaggle](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset?resource=download).
