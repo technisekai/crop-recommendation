@@ -4,9 +4,13 @@
 
 Indonesia merupakan negara agraris yang sebagian besar penduduknya bekerja di sektor pertanian. Dilansir dari [Kementrian Pertanian](https://z-p42.www.instagram.com/p/CooZNrgpjE_/) sektor pertanian menjadi kontributor sebesar **13%** bagi PDB Nasional dan menjadi penghasil devisa bagi negara yang terus meningkat jumlahnya dari tahun 2020 dan 2021. Kementrian Pertanian juga menyebutkan bahwa mayoritas masyarakat Indonesia bekerja sebagai petani dan menggantungkan ekonominya di sektor tersebut.
 
+![Data dari Kementrian Pertanian](https://github.com/technisekai/crop-recommendation/assets/54144923/7558e719-85cf-4f2c-9ea6-1dbb039d84e0)
+
+
 Kesuksesan sektor pertanian dalam menyumbang pendapatan masyarakat ataupun negara tentunya tidak lepas dari produksi panen yang dihasilkan. Hasil panen ini dipengaruhi dari beberapa faktor salah satunya adalah kesesuaian antara jenis tanaman yang ditanam dengan tanahnya. Tanah yang tidak sesuai dengan tanaman yang ditanam akan menyebabkan hasil panen tidak optimal dan bahkan dapat mengalami gagal panen. Dikutip dari penelitian yang dilakukan oleh [Alfian Nur Budiarto](http://repository.uin-suska.ac.id/27846/), dengan penelitian membahas kesesuaian antara tanaman orka dengan jenis tanah dengan indikator tertentu menyimpulkan bahwa tanaman orka mengalami peningkatan produksi jumlah buah, bobot basah buah, dan panjang buah pada tanah dengan indikator tertentu.
 
 Dengan demikian, untuk mendapatkan hasil panen yang lebih optimal dan sebagai salah satu usaha untuk meningkatkan kualitas dari hasil panen maka pemilihan jenis tanaman untuk indikator tanah tertentu menjadi penting untuk dilakukan. Dengan jenis tanah yang tepat produksi panen berpotensi lebih maksimal dan dapat meningkatkan ekonomi masyarakat ataupun negara dan kualitas panen yang dihasilkan pun lebih baik.
+
 ![Workflow Pengerjaan Proyek](https://github.com/technisekai/crop-recommendation/assets/54144923/f3ff5b0a-eb57-474f-bd51-e10cff18e861)
 
 ## Business Understanding
@@ -65,34 +69,54 @@ Namun, jumlah data yang dihapus terlalu banyak yaitu 19% dari keseluruhan data. 
 Pada tahapan modeling, dipilih algoritma random forest dan support vector machine. Karena kedua algoritma ini berdasarkan penelitian dapat bertahan dari efek adanya _outlier_ pada data.
 
 ### How Random Forest Work
-belum...........
+Random forest merupakan teknik _ensemble learning_ untuk klasfikasi. Random forest bekerja dengan memilih sample secara acak kemudian membuah _decision tree_ dari dari setiap sampel yang dipilih dan hasil prediksinya dilakukan voting. Algorita random forest akan memilih hasil prediksi yang paling banyak dipilih.
+
 ### How SVM Work
-belum...........
+SVM merupakan teknik untuk tugas klasifikasi yang bekerja dengan mengidentifikasi _support vector_ dari data kemudian memisahkan data dengan _hyperplane_ dan _support vector_ sebagai acuannya pada masing-masing data.
 
 ## Evaluation
-Evaluasi model dilakukan dengan menggunakan metrik _accuracy, precision, recall, f1-score_ untuk mengevaluasi kemampuan model. 
+Evaluasi model dilakukan dengan menggunakan metrik _accuracy, precision, recall, f1-score_ untuk mengevaluasi kemampuan model.
+
 ### _accuracy_
-belum...........
+Metric accuracy menggambarkan bagaimana model memprediksi True Positive (TP) dan True Negative (TN). Akurasi menjadi pengukuran seberapa baik suatu model dalam melakukan klasifikasi sentimen dilihat dari seberapa banyak peringkat sentimen benar dalam klasifikasi.
+
+![formula accuracy](https://github.com/technisekai/crop-recommendation/assets/54144923/3b704b58-6872-471d-af38-06be0c0425ff)
+
 
 ### _precision_
-belum...........
+Metric precision adalah rasio model memprediksi True Positive (TP) terhadap seluruh hasil prediksi positif yang tujuannya untuk mengukur ketepatan suatu model klasifikasi dimana semakin besar nilai precisionnya maka semakin baik ketepatan model dalam memprediksi kelas suatu data.
+
+![formula precision](https://github.com/technisekai/crop-recommendation/assets/54144923/6f0102ed-c7d7-4d89-a228-1fcaa310c443)
+
 
 ### _recall_
-belum...........
+Metric recall adalah rasio model memprediksi True Positive (TP) terhadap seluruh data benar. Fungsi dari recall yaitu untuk mengukur kelengkapan atau sensitifitas model klasifikasi. Peningkatan nilai recall berarti model menemukan kembali pada sebuah informasi yang relevan dari keseluruhan dataset.
+
+![formula recall](https://github.com/technisekai/crop-recommendation/assets/54144923/7c0cebe5-ef6a-4733-adf3-e7f68ce2a506)
+
 
 ### _f1-score_
-belum...........
+Metric F1-measure merupakan penggabungan nilai precision dan recall untuk menghitung keseimbangan.
+
+![formula f1-score](https://github.com/technisekai/crop-recommendation/assets/54144923/b8a729ba-60f7-40c1-bf25-4e183cffb8cb)
+
 
 Adapun hasilnya adalah sebagai berikut:
 ![Hasil Metrik](https://github.com/technisekai/crop-recommendation/assets/54144923/a879a3db-b954-462f-bb9c-202f4e869fb6)
 
-Model Random Forest dan SVM berhasil mencapai akurasi yang sangat baik di atas 95%. Namun yang terbaik diperoleh oleh model Random Forest dengan akurasi 99%. Disini dilakukan juga eksperimen dengan melatih algoritma Random Forest dan SVM dengan data yang sudah dihilangkan _outliersnya_. Namun, model Random Forest dan SVM yang sudah dihilangkan _outliersnya_ mengalami penurunan performa sebesar 1% sehingga dapat disimpulkan bahwa menghilangkan _outliers_ sebesar 19% dari keseluruhan data memiliki dampak pada performa model sebesar 1%.
+Model Random Forest dan SVM berhasil mencapai akurasi yang sangat baik di atas 95%. Namun yang terbaik diperoleh oleh model Random Forest dengan akurasi 99%. Disini dilakukan juga eksperimen dengan melatih algoritma Random Forest dan SVM dengan data yang sudah dihilangkan _outliersnya_. Namun, model Random Forest dan SVM yang sudah dihilangkan _outliersnya_ mengalami penurunan performa sebesar 1% pada 4 metrik yang digunakan sehingga dapat disimpulkan bahwa menghilangkan _outliers_ sebesar 19% dari keseluruhan data memiliki dampak pada performa model sebesar 1% yang mana berarti penghilangan _outliers_ tidak selalu menghasilkan hasil yang baik bagi performa model.
 
 ## Referensi
-[1] ig kementrian
-[2] negara agraris
-[3] penelitian tanaman orka
-[4] data kaggle
-[5] jumlah maksimum data yang dapat dihilangkan
-[6] kenapa random forest dan svm tahan outlier dan cara kerja
-[7] metrik
+[1] Ditjenbun, “Kementerian Pertanian Direktorat Jenderal Perkebunan » Tak Heran, Komoditas Perkebunan Selalu Berhasil Dongkrak Devisa Negara & Terbukti Solusi Tepat Hadapi Krisis Pangan Global,” Nov. 24, 2022. https://ditjenbun.pertanian.go.id/tak-heran-komoditas-perkebunan-selalu-berhasil-dongkrak-devisa-negara-terbukti-solusi-tepat-hadapi-krisis-pangan-global/ (accessed May 13, 2023).
+
+[2] ditjenbun, “Kementerian Pertanian Direktorat Jenderal Perkebunan » Tak Heran, Komoditas Perkebunan Selalu Berhasil Dongkrak Devisa Negara & Terbukti Solusi Tepat Hadapi Krisis Pangan Global,” Nov. 24, 2022. https://ditjenbun.pertanian.go.id/tak-heran-komoditas-perkebunan-selalu-berhasil-dongkrak-devisa-negara-terbukti-solusi-tepat-hadapi-krisis-pangan-global/ (accessed May 13, 2023).
+
+[3] A. Ingle, “Crop Recommendation Dataset | Kaggle,” May 13, 2022. https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset?resource=download (accessed May 13, 2023).
+
+[4] J. Frost, “Guidelines for Removing and Handling Outliers in Data - Statistics By Jim,” Apr. 11, 2023. https://statisticsbyjim.com/basics/remove-outliers/ (accessed May 13, 2023).
+
+[5] A. Srivastava, “Let’s Talk about Random Forests!. In my previous article, we discussed… | by Arpan Srivastava | Analytics Vidhya | Medium,” Apr. 19, 2021. https://medium.com/analytics-vidhya/lets-talk-about-random-forests-524ae1138d8b (accessed May 13, 2023).
+
+[6] H. Ali Ismail, “Learning Data Science: Day 11 - Support Vector Machine | by Haydar Ali Ismail | Medium,” Jan. 10, 2017. https://haydar-ai.medium.com/learning-data-science-day-11-support-vector-machine-8ef06da91bfc (accessed May 13, 2023).
+
+[7] S. K. Dirjen, P. Riset, D. Pengembangan, R. Dikti, S. Khomsah, and A. S. Aribowo, “Text-Preprocessing Model Youtube Comments in Indonesian,” J. RESTI (Rekayasa Sist. dan Teknol. Informasi), vol. 4, no. 4, pp. 648–654, Aug. 2020, doi: 10.29207/RESTI.V4I4.2035.
