@@ -48,7 +48,16 @@ Dataset yang digunakan didapatkan dari sumber terbuka [kaggle](https://www.kaggl
 
 Pada tahap ini dilakukan pengecekkan _missing value_ pada dataset. Hal ini dilakukan untuk meningkatkan performa dari algoritma machine learning. Selain itu _missing value_ akan menyebabkan algoritma eror ketika proses pelatihan.
 
-![Cek Missing Value](https://github.com/technisekai/crop-recommendation/assets/54144923/bfb277eb-058b-44fa-8952-f64b5396dedd)
+| No | Column      | Non-Null Count | Dtype   |
+|----|-------------|----------------|---------|
+| 0  | N           | 2200 non-null  | int64   |
+| 1  | P           | 2200 non-null  | int64   |
+| 2  | K           | 2200 non-null  | int64   |
+| 3  | temperature | 2200 non-null  | float64 |
+| 4  | humidity    | 2200 non-null  | float64 |
+| 5  | ph          | 2200 non-null  | float64 |
+| 6  | rainfall    | 2200 non-null  | float64 |
+| 7  | label       | 2200 non-null  | object  |
 
 Dari gambar di atas, dataset tidak memiliki _missing value_ di kolom manapun sehingga bisa berlanjut ke tahap selanjutnya yaitu pengecekkan _outliers_.
 
@@ -61,7 +70,7 @@ Kemudian banyaknya data pada masing-masing label juga sudah seimbang. Hal ini di
 
 Selain fitur N, fitur lain memiliki nilai _outliers_ di dalamnya. Pada kasus ini, dicoba untuk menghilangkan/menghapus _outliers tersebut_ menggunakan metode IQR:
 
-![Data yang hilang setelah outlier removal](https://github.com/technisekai/crop-recommendation/assets/54144923/053649b7-ce12-459d-bb06-0cb24798b609)
+```Data yang hilang setelah menghilangkan outlier adalah 0,196 atau 19% dari keseuluruhan data```
 
 Namun, jumlah data yang dihapus terlalu banyak yaitu 19% dari keseluruhan data. Dengan jumlah data yang hilang sebanyak ini maka informasi pada dataset akan berkurang banyak sehingga diputuskan untuk mempertahankan nilai _outlier_ dan mencari algoritma machine learning yang sesuai yang dapat bertahan dari _outliers_. Namun penulis tetap menyediakan data yang sudah dihapus outliersnya yang digunakan sebagai pembanding di tahap evaluasi nanti.
 
@@ -102,7 +111,12 @@ Metric F1-measure merupakan penggabungan nilai precision dan recall untuk menghi
 
 
 Adapun hasilnya adalah sebagai berikut:
-![Hasil Metrik](https://github.com/technisekai/crop-recommendation/assets/54144923/a879a3db-b954-462f-bb9c-202f4e869fb6)
+| No | algorithm                                | accuracy | precision | recall | f1-score |
+|----|------------------------------------------|----------|-----------|--------|----------|
+| 1  | Random Forest                            | 99%      | 99%       | 99%    | 99%      |
+| 2  | Support Vector Machine                   | 98%      | 98%       | 97%    | 97%      |
+| 3  | Random Forest + Outlier Removal          | 98%      | 99%       | 97%    | 98%      |
+| 4  | Support Vector Machine + Outlier Removal | 97%      | 93%       | 94%    | 93%      |
 
 Model Random Forest dan SVM berhasil mencapai akurasi yang sangat baik di atas 95%. Namun yang terbaik diperoleh oleh model Random Forest dengan akurasi 99%. Disini dilakukan juga eksperimen dengan melatih algoritma Random Forest dan SVM dengan data yang sudah dihilangkan _outliersnya_. Namun, model Random Forest dan SVM yang sudah dihilangkan _outliersnya_ mengalami penurunan performa sebesar 1% pada 4 metrik yang digunakan sehingga dapat disimpulkan bahwa menghilangkan _outliers_ sebesar 19% dari keseluruhan data memiliki dampak pada performa model sebesar 1% yang mana berarti penghilangan _outliers_ tidak selalu menghasilkan hasil yang baik bagi performa model.
 
